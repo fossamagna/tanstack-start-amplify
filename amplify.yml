@@ -1,0 +1,25 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - nvm install 22
+            - nvm use 22
+            - node -v
+            - curl -fsSL https://viteplus.dev/install.sh | bash
+            - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - echo "node-linker=hoisted" > ../../.npmrc
+            - vp install
+        build:
+          commands:
+            - vp build
+      artifacts:
+        baseDirectory: .amplify-hosting
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - node_modules/**/*
+      buildPath: examples/hello-world
+    appRoot: examples/hello-world
