@@ -11,6 +11,7 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
   vite-plus: latest
+  nitro: npm:nitro-nightly@3.0.1-20260508-123613-d2e64906
 overrides:
   vite: "catalog:"
   vitest: "catalog:"
