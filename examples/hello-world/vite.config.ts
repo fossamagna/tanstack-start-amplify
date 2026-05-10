@@ -12,7 +12,7 @@ const config = defineConfig({
   plugins: [
     devtools(),
     // @ts-expect-error awsAmplify is a valid nitro preset option but missing from NitroConfig types
-    nitro({ config: { preset: "aws_amplify", awsAmplify: { runtime: "nodejs22.x" } } }),
+    nitro({ config: { preset: "aws_amplify", awsAmplify: { runtime: "nodejs24.x" } } }),
     tailwindcss(),
     tanstackStart({
       router: {
