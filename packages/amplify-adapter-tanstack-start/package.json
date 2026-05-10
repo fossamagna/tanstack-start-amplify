@@ -1,0 +1,48 @@
+{
+  "name": "amplify-adapter-tanstack-start",
+  "version": "0.0.0",
+  "description": "A starter for creating a TypeScript package.",
+  "homepage": "https://github.com/fossamagna/tanstack-start-amplify/blob/main/packages/amplify-adapter-tanstack-start/README.md",
+  "bugs": {
+    "url": "https://github.com/fossamagna/tanstack-start-amplify/issues"
+  },
+  "license": "MIT",
+  "author": "Masahiko Murakami <fossamagna2@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fossamagna/tanstack-start-amplify.git",
+    "directory": "packages/amplify-adapter-tanstack-start"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build"
+  },
+  "devDependencies": {
+    "@aws-amplify/core": "^6.10.5",
+    "@tanstack/react-start": "^1.0.0",
+    "@types/node": "^25.5.0",
+    "@typescript/native-preview": "7.0.0-dev.20260328.1",
+    "bumpp": "^11.0.1",
+    "typescript": "^6.0.2",
+    "vite-plus": "^0.1.14"
+  },
+  "peerDependencies": {
+    "@aws-amplify/core": "^6.10.5",
+    "@tanstack/react-start": "^1.0.0",
+    "aws-amplify": "^6.14.1"
+  }
+}
