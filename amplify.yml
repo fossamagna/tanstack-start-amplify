@@ -14,6 +14,7 @@ applications:
           commands:
             - corepack enable
             - pnpm install --frozen-lockfile
+            - pnpm rebuild esbuild
             - pnpm exec ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
     frontend:
       phases:
