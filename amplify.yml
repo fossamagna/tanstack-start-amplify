@@ -12,9 +12,8 @@ applications:
             - echo "node-linker=hoisted" > ../../.npmrc
         build:
           commands:
-            - export PATH="$HOME/.vite-plus/bin:$PATH"
             - corepack enable
-            - vp install --frozen-lockfile
+            - pnpm install --frozen-lockfile
             - pnpm exec ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
     frontend:
       phases:
