@@ -9,6 +9,9 @@ catalogs:
     nitro:
       specifier: npm:nitro-nightly@3.0.1-20260508-123613-d2e64906
       version: 3.0.1-20260508-123613-d2e64906
+    tsx:
+      specifier: ^4.21.0
+      version: 4.21.0
     vite-plus:
       specifier: latest
       version: 0.1.20
@@ -164,6 +167,9 @@ importers:
       tailwindcss:
         specifier: ^4.1.18
         version: 4.2.4
+      tsx:
+        specifier: 'catalog:'
+        version: 4.21.0
       typescript:
         specifier: ^6.0.2
         version: 6.0.3

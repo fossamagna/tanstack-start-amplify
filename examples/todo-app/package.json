@@ -33,6 +33,7 @@
     "aws-cdk": "2.1020.0",
     "aws-cdk-lib": "2.203.1",
     "tailwindcss": "^4.1.18",
+    "tsx": "catalog:",
     "typescript": "^6.0.2",
     "vite": "^8.0.0"
   },
