@@ -13,6 +13,7 @@ catalog:
   vite-plus: latest
   nitro: npm:nitro-nightly@3.0.1-20260508-123613-d2e64906
   tsx: ^4.21.0
+  esbuild: ^0.28.0
 overrides:
   vite: "catalog:"
   vitest: "catalog:"
