@@ -12,21 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
+      - uses: voidzero-dev/setup-vp@v1
         with:
           node-version: 22
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          cache: true
 
       - name: Check
-        run: pnpm exec vp check
+        run: vp check
 
       - name: Test
-        run: pnpm exec vp run --filter amplify-adapter-tanstack-start test
+        run: vp run -r test
 
       - name: Build
-        run: pnpm exec vp run --filter amplify-adapter-tanstack-start build
+        run: vp run -r build
