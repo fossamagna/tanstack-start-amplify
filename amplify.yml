@@ -23,7 +23,7 @@ applications:
             - vp install
         build:
           commands:
-            - RAYON_NUM_THREADS=4 NODE_OPTIONS="--max-old-space-size=12288" vp run --filter amplify-adapter-tanstack-start --filter todo-app build
+            - RAYON_NUM_THREADS=4 NODE_OPTIONS="--max-old-space-size=4096" vp run --filter amplify-adapter-tanstack-start --filter todo-app build
       artifacts:
         baseDirectory: .amplify-hosting
         files:
