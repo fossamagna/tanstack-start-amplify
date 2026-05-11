@@ -1,9 +1,6 @@
-import { HeadContent, Outlet, Scripts, createRootRoute, useNavigate } from "@tanstack/react-router";
+import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import { Authenticator, ThemeProvider } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
-import { Hub } from "aws-amplify/utils";
-import { useEffect } from "react";
 
 import config from "../../amplify_outputs.json";
 import appCss from "../styles.css?url";
@@ -46,23 +43,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 }
 
 function RootApp() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = Hub.listen("auth", async ({ payload }) => {
-      if (payload.event === "signedIn") {
-        await navigate({ to: "/" });
-      }
-    });
-    return unsubscribe;
-  }, [navigate]);
-
   return (
-    <Authenticator.Provider>
-      <ThemeProvider>
-        <Outlet />
-        <TanStackRouterDevtools />
-      </ThemeProvider>
-    </Authenticator.Provider>
+    <>
+      <Outlet />
+      <TanStackRouterDevtools />
+    </>
   );
 }

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "@aws-amplify/ui-react/styles.css";
 
 @theme {
   --font-sans:
