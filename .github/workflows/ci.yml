@@ -17,6 +17,9 @@ jobs:
           node-version: 22
           cache: true
 
+      - name: Build amplify-adapter-tanstack-start
+        run: vp run --filter amplify-adapter-tanstack-start build
+
       - name: Check
         run: vp check
 
