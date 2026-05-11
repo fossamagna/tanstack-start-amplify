@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(vp install *)",
+      "Bash(vp check *)",
+      "Bash(vp build *)",
+      "Bash(git -C /Users/fossamagna/git/tanstack-start-amplify add amplify.yml)",
+      "Bash(git -C /Users/fossamagna/git/tanstack-start-amplify commit -m \"fix: restore 8GB heap - fewer modules now \\(750 vs 1517\\) so 8GB may work\")",
+      "Bash(git -C /Users/fossamagna/git/tanstack-start-amplify push origin init)"
+    ]
+  }
+}
