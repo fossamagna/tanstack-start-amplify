@@ -11,6 +11,7 @@
     "preview": "vp preview"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.9.0",
     "@tanstack/react-router": "latest",
     "@tanstack/react-router-devtools": "latest",
     "@tanstack/react-start": "latest",
