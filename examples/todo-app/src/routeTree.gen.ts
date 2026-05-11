@@ -131,7 +131,9 @@ const ProtectedRouteChildren: ProtectedRouteChildren = {
   ProtectedTodoIdEditRoute: ProtectedTodoIdEditRoute,
 };
 
-const ProtectedRouteWithChildren = ProtectedRoute._addFileChildren(ProtectedRouteChildren);
+const ProtectedRouteWithChildren = ProtectedRoute._addFileChildren(
+  ProtectedRouteChildren,
+);
 
 const rootRouteChildren: RootRouteChildren = {
   ProtectedRoute: ProtectedRouteWithChildren,
