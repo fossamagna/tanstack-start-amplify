@@ -9,6 +9,7 @@
     "prepare": "vp config"
   },
   "devDependencies": {
+    "esbuild": "catalog:",
     "vite-plus": "catalog:"
   },
   "engines": {
