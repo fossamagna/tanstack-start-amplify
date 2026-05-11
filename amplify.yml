@@ -24,7 +24,7 @@ applications:
         build:
           commands:
             - free -h
-            - (while true; do echo "=== $(date -u +%H:%M:%S) ===" && free -h | grep Mem; sleep 30; done) & echo $! > /tmp/mem_monitor.pid
+            - (while true; do echo "=== $(date -u +%H:%M:%S) ===" && free -h | grep Mem; sleep 10; done) & echo $! > /tmp/mem_monitor.pid
             - NODE_OPTIONS="--max-old-space-size=32768" vp run --filter amplify-adapter-tanstack-start --filter todo-app build
             - kill $(cat /tmp/mem_monitor.pid) 2>/dev/null || true
             - free -h
@@ -32,8 +32,9 @@ applications:
         baseDirectory: .amplify-hosting
         files:
           - "**/*"
-      cache:
-        paths:
-          - node_modules/**/*
+      # cache disabled for cold build test
+      # cache:
+      #   paths:
+      #     - node_modules/**/*
       buildPath: examples/todo-app
     appRoot: examples/todo-app
