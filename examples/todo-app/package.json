@@ -23,8 +23,8 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@aws-amplify/backend": "1.16.1",
-    "@aws-amplify/backend-cli": "1.5.0",
+    "@aws-amplify/backend": "^1.16.1",
+    "@aws-amplify/backend-cli": "^1.5.0",
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
