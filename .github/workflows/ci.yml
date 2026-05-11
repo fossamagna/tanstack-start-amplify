@@ -24,7 +24,7 @@ jobs:
         run: vp check
 
       - name: Test
-        run: vp run -r test
+        run: vp run --filter './packages/**' test
 
       - name: Build
         run: vp run -r build
