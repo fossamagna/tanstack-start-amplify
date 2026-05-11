@@ -9,7 +9,6 @@ applications:
             - node -v
             - curl -fsSL https://viteplus.dev/install.sh | bash
             - export PATH="$HOME/.vite-plus/bin:$PATH"
-            - echo "node-linker=hoisted" > ../../.npmrc
         build:
           commands:
             - corepack enable
