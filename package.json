@@ -6,9 +6,11 @@
   "scripts": {
     "ready": "vp check && vp run -r test && vp run -r build",
     "dev": "vp run website#dev",
-    "prepare": "vp config"
+    "prepare": "vp config",
+    "release": "vp run -r build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "catalog:",
     "esbuild": "catalog:",
     "vite-plus": "catalog:"
   },
