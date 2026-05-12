@@ -10,6 +10,7 @@
     "release": "vp run -r build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "catalog:",
     "@changesets/cli": "catalog:",
     "esbuild": "catalog:",
     "vite-plus": "catalog:"
