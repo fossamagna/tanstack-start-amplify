@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main, init]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: 22
+          cache: true
+
+      - name: Build amplify-adapter-tanstack-start
+        run: vp run --filter amplify-adapter-tanstack-start build
+
+      - name: Check
+        run: vp check
+
+      - name: Test
+        run: vp run --filter './packages/**' test
+
+      - name: Create dummy amplify_outputs.json
+        run: echo '{"version":"1"}' > examples/todo-app/amplify_outputs.json
+
+      - name: Build
+        run: vp run -r build
