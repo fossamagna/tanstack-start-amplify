@@ -1,6 +1,6 @@
 {
   "name": "amplify-adapter-tanstack-start",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A starter for creating a TypeScript package.",
   "homepage": "https://github.com/fossamagna/tanstack-start-amplify/blob/main/packages/amplify-adapter-tanstack-start/README.md",
   "bugs": {
