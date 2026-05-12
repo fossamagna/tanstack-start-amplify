@@ -13,7 +13,7 @@
     "ready": "vp check && vp run -r test && vp run -r build",
     "dev": "vp run website#dev",
     "prepare": "vp config",
-    "release": "npm --version && node --version && vp run -r build && changeset publish"
+    "release": "vp run -r build && changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "catalog:",
