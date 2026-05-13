@@ -21,10 +21,23 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v6
       - uses: voidzero-dev/setup-vp@v1
-      - name: Upgrade npm for OIDC trusted publishing
-        run: npm install -g npm@^11.5.1
       - name: Create dummy amplify_outputs.json
         run: echo '{"version":"1"}' > examples/todo-app/amplify_outputs.json
+      - name: Setup npm authentication via OIDC trusted publishing
+        run: |
+          PACKAGE_NAME=$(node -p "require('./packages/amplify-adapter-tanstack-start/package.json').name")
+          OIDC_TOKEN=$(curl -sS \
+            -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm:registry.npmjs.org" | jq -r '.value // empty')
+          if [ -z "$OIDC_TOKEN" ]; then echo "::error::Failed to get OIDC token"; exit 1; fi
+          EXCHANGE_RESPONSE=$(curl -sS -X POST \
+            -H "Authorization: Bearer $OIDC_TOKEN" \
+            "https://registry.npmjs.org/-/npm/v1/oidc/token/exchange/package/${PACKAGE_NAME}")
+          echo "Exchange response: $EXCHANGE_RESPONSE"
+          NPM_TOKEN=$(echo "$EXCHANGE_RESPONSE" | jq -r '.token // empty')
+          if [ -z "$NPM_TOKEN" ]; then echo "::error::npm token exchange failed"; exit 1; fi
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+          echo "npm authentication configured via OIDC trusted publishing"
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
