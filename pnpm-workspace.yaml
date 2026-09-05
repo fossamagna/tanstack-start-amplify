@@ -11,7 +11,7 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
   vite-plus: latest
-  nitro: npm:nitro-nightly@3.0.1-20260508-123613-d2e64906
+  nitro: npm:nitro-nightly@3.0.1-20260904-104602-c5177e92
   tsx: ^4.21.0
   esbuild: ^0.28.0
   "@changesets/cli": ^2.31.0
