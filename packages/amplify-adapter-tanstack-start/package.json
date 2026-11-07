@@ -34,7 +34,7 @@
     "@aws-amplify/core": "^6.10.5",
     "@tanstack/react-start": "^1.0.0",
     "@types/node": "^25.5.0",
-    "bumpp": "^11.0.1",
+    "bumpp": "^12.0.0",
     "typescript": "^6.0.2",
     "vite-plus": "^0.1.14"
   },
